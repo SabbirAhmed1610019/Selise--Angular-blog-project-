@@ -1,0 +1,24 @@
+<div class="container py-5">
+    <div class="row py-4">
+        <div class="col-12 col-md-6">
+            <form #writeBlogForm="ngForm" (ngSubmit)="writeBlog()" style="max-width: 400px;">
+            <div class="mb-3">
+                <label class="form-lebel">Blog Title</label>
+                <input type ="text" autocomplete="off" class="form-control" [(ngModel)]="blog.title" name="title">  
+            </div>
+            <div class="mb-3">
+                <label class="form-lebel">Text</label>
+                <textarea class="form-control" rows="6" [(ngModel)]="blog.text" name="text"></textarea>  
+            </div>
+
+            <div class ="alert alert-danger" role="alert" *ngIf="error">
+                {{error}}
+            </div>
+
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary">Save Blog</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

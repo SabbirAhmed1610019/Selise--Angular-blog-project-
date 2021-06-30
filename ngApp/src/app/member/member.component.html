@@ -1,0 +1,20 @@
+
+<div class="container py-5">
+    <p>
+        <b>Author's Email : </b> {{user.email}}
+      </p>
+    <div class="column">
+     <div class="mb-4" *ngFor="let blog of blogs">
+        <div class="card" style="width: 80%" *ngIf="blog.author == user.email">
+            <div class="card-body">
+            <h5 class="card-title">{{blog.title}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Author's Mail : {{blog.author}}</h6>
+            <p class="card-text">{{blog.text}}</p>
+            <a class="card-link btn btn-secondary" [routerLink]="['/blog',blog._id]">Read more</a>
+            <a class="card-link btn btn-success" style="color: azure;">Edit</a>
+            <a class="card-link btn btn-danger" style="color: azure;">Delete</a>
+            </div>
+        </div>
+    </div>
+    </div>
+ </div>
